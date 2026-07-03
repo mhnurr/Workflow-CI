@@ -1,0 +1,19 @@
+name: titanic-env
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.12
+  - pip
+
+  - pip:
+      - mlflow==2.19.0
+      - pandas==2.2.3
+      - numpy==2.2.1
+      - scikit-learn==1.6.1
+      - joblib==1.4.2
+      - cloudpickle==3.1.1
+      - matplotlib==3.10.0
+      - seaborn==0.13.2
