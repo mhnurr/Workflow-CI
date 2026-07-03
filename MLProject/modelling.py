@@ -40,35 +40,35 @@ def main():
         stratify=y
     )
 
-    with mlflow.start_run():
+    
 
-        model = RandomForestClassifier(
+    model = RandomForestClassifier(
             random_state=42,
             n_estimators=50,
             n_jobs=-1
-        )
+    )
 
-        model.fit(
+    model.fit(
             X_train,
             y_train
-        )
+    )
 
 
-        joblib.dump(model, "model.pkl")
+    joblib.dump(model, "best_model.pkl")
 
-        prediction = model.predict(
+    prediction = model.predict(
             X_test
-        )
+     )
 
-        accuracy = accuracy_score(
+    accuracy = accuracy_score(
             y_test,
             prediction
-        )
+    )
 
-        print("=" * 50)
-        print(f"Accuracy : {accuracy:.4f}")
-        print("=" * 50)
-        print("Training selesai.")
+    print("=" * 50)
+    print(f"Accuracy : {accuracy:.4f}")
+    print("=" * 50)
+    print("Training selesai.")
 
 if __name__ == "__main__":
     main()
