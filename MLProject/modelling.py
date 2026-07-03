@@ -16,18 +16,14 @@ def main():
 
     mlflow.set_tracking_uri("file:./mlruns")
 
-    mlflow.set_experiment("Titanic Classification")
+    mlflow.set_experiment("Titanic_Classification")
 
     mlflow.sklearn.autolog()
 
     df = pd.read_csv(
-        "preprocessing/titanic_preprocessed.csv"
+        "titanic_preprocessed.csv"
     )
 
-    print("=" * 50)
-    print("Dataset Preview")
-    print("=" * 50)
-    print(df.head())
 
     X = df.drop(
         columns=["Survived"]
@@ -48,7 +44,7 @@ def main():
 
         model = RandomForestClassifier(
             random_state=42,
-            n_estimators=100,
+            n_estimators=50,
             n_jobs=-1
         )
 
@@ -58,10 +54,7 @@ def main():
         )
 
 
-        joblib.dump(
-            model,
-            "model.pkl"
-        )
+        joblib.dump(model, "model.pkl")
 
         prediction = model.predict(
             X_test
@@ -75,10 +68,7 @@ def main():
         print("=" * 50)
         print(f"Accuracy : {accuracy:.4f}")
         print("=" * 50)
-
-        print("Model berhasil disimpan sebagai best_model.pkl")
         print("Training selesai.")
-
 
 if __name__ == "__main__":
     main()
