@@ -14,7 +14,7 @@ from sklearn.metrics import accuracy_score
 
 def main():
 
-    mlflow.set_tracking_uri("http://127.0.0.1:5000")
+    mlflow.set_tracking_uri("mlflow.set_tracking_uri("file:./mlruns")")
 
     mlflow.set_experiment("Titanic Classification")
 
