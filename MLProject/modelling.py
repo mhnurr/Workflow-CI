@@ -16,7 +16,7 @@ def main():
 
     mlflow.set_tracking_uri("file:./mlruns")
 
-    mlflow.set_experiment("Titanic_Classification")
+    mlflow.set_experiment("Titanic Classification")
 
     mlflow.sklearn.autolog()
 

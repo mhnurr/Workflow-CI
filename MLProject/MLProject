@@ -1,4 +1,4 @@
-name: AdultIncomeClassification
+name: Titanic Classification
 
 conda_env: conda.yaml
 
